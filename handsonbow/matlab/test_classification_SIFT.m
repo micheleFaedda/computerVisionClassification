@@ -5,30 +5,35 @@ acc_val = [];
 acc_test = [];
 k_kmeans = 1000;
 
-%cambia la stringa qua sotto con la tua directory
+
+
+%%%%  ATTENZIONE!!!!! RUN ALLA PRIMA VOLTA
+%%%%% ASSICURARSI CHE LE FLAG 'do_feat_extraction'
+%%%%% DENTRO LE FUNZIONI'test_multidense_SIFT_gray' E 'test_multidense_SIFT_pyramid4' SIANO SETTATE A 1
+%cambia la stringa qua sotto con la tua directory 
 path = '/Users/michele/Documents/GitHub/computerVisionClassification/handsonbow';
 
 %test_gray
-%[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidense_SIFT_gray(path,k_kmeans);
+[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidense_SIFT_gray(path,k_kmeans);
 
 %test_pyramid_4
-%[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidense_SIFT_pyramid4(path,k_kmeans);
+[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidense_SIFT_pyramid4(path,k_kmeans);
 
 %test_pyramid_16
-%[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidense_SIFT_pyramid16(path,k_kmeans); 
+[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidense_SIFT_pyramid16(path,k_kmeans); 
 
 
 %test_color
-%[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidenseColorSIFT(path,k_kmeans); 
+[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidenseColorSIFT(path,k_kmeans); 
 
 %Test_pyramid 4 _color
-%[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidense_SIFT_pyramid_4_color(path,k_kmeans); 
+[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidense_SIFT_pyramid_4_color(path,k_kmeans); 
 
 %Test_pyramids_color
-%[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidense_SIFT_pyramid_color(path,k_kmeans); 
+[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidense_SIFT_pyramid_color(path,k_kmeans); 
 
 %test all pyramids
-%[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidense_SIFT_pyramid_4_16(path,k_kmeans); 
+[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidense_SIFT_pyramid_4_16(path,k_kmeans); 
 
 %Test_color_gray
 [acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidense_SIFT_color_gray(path,k_kmeans); 
@@ -53,7 +58,7 @@ f_accurancy_final= figure(1000);
 f_accurancy_final.Name = "Comparison with k(words) kmeans= "+ num2str(k_kmeans) + " - SVM k^2" ;
 bar_values = [acc_train', acc_val', acc_test'];
 %method_names = ["Mds.SIFT pyramid 4 color","Mds.SIFT pyramids color","Mds.SIFT pyramids","Mds.SIFT color gray","Mds.SIFT color", "Mds.SIFT gray", "Mds.SIFT pyramid 16 quad.","Mds.SIFT pyramid 4 quad."];
-method_names = ["Mds.SIFT color"];
+method_names = ["Mds.SIFT gray","Mds.SIFT Pyramid 4 quad.","Mds.SIFT Pyramid 16 quad.","Mds.SIFT color","Mds.SIFT 4 quad + color","Mds.SIFT 4/16 quad + color","Mds.SIFT 4/16 quad","Mds.SIFT color + gray"];
 
 
 display_bar_accurancy(f_accurancy_final, bar_values,method_names);
