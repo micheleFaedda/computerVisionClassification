@@ -1,4 +1,4 @@
 # Mac/OSX
 .DS_Store
-handsonbow/img/
-handsonbow/results/
+handsonbow/img
+handsonbow/results
