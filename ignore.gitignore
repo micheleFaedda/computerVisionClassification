@@ -1,4 +1,5 @@
 # Mac/OSX
 .DS_Store
-**/img/
+img/
 results/
+
