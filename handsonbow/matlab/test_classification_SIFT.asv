@@ -5,9 +5,6 @@ acc_val = [];
 acc_test = [];
 k_kmeans = 1000;
 
-%if u want to compare SVM linear and chi^2 (where it's possible) set 1
-%otherwise 0
-do_comparison_linear_chi2 = 1; 
 
 
 %%%%  ATTENZIONE!!!!! RUN ALLA PRIMA VOLTA
@@ -27,7 +24,7 @@ path = '/Users/michele/Documents/GitHub/computerVisionClassification/handsonbow'
 
 
 %test_color
-[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidenseColorSIFT(path,k_kmeans,do_comparison_linear_chi2); 
+[acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidenseColorSIFT(path,k_kmeans); 
 
 %Test_pyramid 4 _color
 [acc_train(end+1), acc_val(end+1), acc_test(end+1)] = test_multidense_SIFT_pyramid_4_color(path,k_kmeans); 
@@ -57,7 +54,7 @@ path = '/Users/michele/Documents/GitHub/computerVisionClassification/handsonbow'
 %acc_val(end+1) = 0.86806;
 %acc_test(end+1) = 0.86296;
 
-f_accurancy_final= figure(1001);
+f_accurancy_final= figure(1000);
 f_accurancy_final.Name = "Comparison with k(words) kmeans= "+ num2str(k_kmeans) + " - SVM k^2" ;
 bar_values = [acc_train', acc_val', acc_test'];
 %method_names = ["Mds.SIFT pyramid 4 color","Mds.SIFT pyramids color","Mds.SIFT pyramids","Mds.SIFT color gray","Mds.SIFT color", "Mds.SIFT gray", "Mds.SIFT pyramid 16 quad.","Mds.SIFT pyramid 4 quad."];

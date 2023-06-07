@@ -22,6 +22,7 @@ for i=1:length(classes)
         end
         subplot(1,2,1), showimage(combimage(imgcorr,[],1))
         title(sprintf('%d Correctly classified %s images',length(indcorr),classes{i}))
+        pause(1);
     end
 
     imgmiss={};
@@ -47,9 +48,10 @@ for i=1:length(classes)
         end
         subplot(1,2,2), showimage(combimage(imgmiss,[],1))
         title(sprintf('%d Miss-classified %s images',length(indmiss),classes{i}))
+        pause(1);
     end
 
-    %pause;
+    
 end
 
 end
