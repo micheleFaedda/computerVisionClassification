@@ -24,7 +24,7 @@ dataset_dir = 'traincleaned';
 desc_name = 'all_pyramid_color';
 
 % FLAGS
-do_feat_extraction = 1;
+do_feat_extraction = 0;
 do_split_sets = 0;
 
 do_form_codebook = 1;
